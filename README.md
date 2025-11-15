@@ -1,41 +1,51 @@
 # Chat Application (Backend)
 
-This is the backend service for a real-time chat application built with Node.js, Express, Socket.IO, and MongoDB Atlas.  
-Users can join groups, send messages, leave groups, and see online members.  
-Admins have additional permissions to create groups.
+This is the backend for a real-time chat application built using Node.js, Express, MongoDB Atlas, and Socket.IO.  
+The project follows the MVC architecture to keep routing, controllers, and business logic clean and maintainable.
+
+Users can join and leave groups, send messages, view online members, and authenticate using JWT.  
+Admins have elevated permissions to create groups.
+
+---
+
+## Architecture
+
+This backend follows the **MVC pattern**:
+
+- **Models** – MongoDB schemas (Users, Groups, Messages)
+- **Controllers** – Handle logic for users, groups, and messages
+- **Routes** – API endpoints mapped to controllers
+- **Middleware** – Authentication, authorization, validation
+- **Sockets** – Real-time messaging and online presence
+- **Config** – Database connection and environment setup
 
 ---
 
 ## Features
 
 ### Authentication & Authorization
-
-- User registration and login using JWT.
-- Protected routes using authentication middleware.
-- Admin-only actions (e.g., group creation).
+- JWT-based login and protected routes
+- Password hashing with bcrypt
+- Admin-only actions (group creation)
 
 ### Users
-
-- Login / logout
+- Register, login, logout
 - Join groups
 - Leave groups
-- View online members in a group
+- View online users inside groups
 
 ### Groups
-
-- Admins can create groups.
-- Users can view available groups.
-- Users can join or leave groups.
+- Admins can create groups
+- Users can browse available groups
+- Join / leave groups
 
 ### Messages
-
-- Real-time messaging using Socket.IO.
-- Fetch past messages from database.
-- Store chat history in MongoDB Atlas.
+- Real-time communication through Socket.IO
+- Fetch previous messages from MongoDB
+- Store chat history per group
 
 ### Database
-
-- MongoDB Atlas (cloud database)
+- MongoDB Atlas cloud database
 - Collections:
   - Users
   - Groups
@@ -48,10 +58,12 @@ Admins have additional permissions to create groups.
 - Node.js
 - Express.js
 - Socket.IO
-- MongoDB Atlas (Mongoose)
-- JSON Web Tokens (JWT)
-- Bcrypt (password hashing)
+- MongoDB Atlas + Mongoose
+- JWT Authentication
+- Bcrypt for password hashing
+- MVC Folder Architecture
 
 ---
 
-## Project Structure
+## Folder Structure (MVC)
+
