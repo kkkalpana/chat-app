@@ -24,7 +24,6 @@ const Login = () => {
 
   //handle submit function
   const handlesubmit = async (e) => {
-    console.log("Submitting", { email, password });
     setLoading(true);
 
     try {
