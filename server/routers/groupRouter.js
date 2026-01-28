@@ -11,7 +11,10 @@ groupRouter.post("/", protect, isAdmin, obj.createGroup);
 groupRouter.get("/", protect, obj.getAllGroups);
 
 // Join Group
-groupRouter.post("/join", protect, obj.joinGroup);
+groupRouter.post("/:groupId/join", protect, obj.joinGroup);
+
+// Leave Group
+groupRouter.post("/:groupId/leave", protect, obj.leaveGroup);
 // groupRouter.post("/add-member", obj.addMember);
 // groupRouter.post("/remove-member", obj.removeMember);
 // groupRouter.get("/get-group/:groupId", obj.getGroupDetails);

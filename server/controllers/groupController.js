@@ -44,7 +44,7 @@ const getAllGroups = async (req, res) => {
 // Join Group
 const joinGroup = async (req, res) => {
   try {
-    const group = await groupModel.findById(req.body.groupId);
+    const group = await groupModel.findById(req.params.groupId);
 
     // if group not found
     if (!group) {
@@ -52,7 +52,11 @@ const joinGroup = async (req, res) => {
     }
 
     // if user already a member
-    if (group.members.includes(req.user._id)) {
+    if (
+      group.members.some(
+        (member) => member.toString() === req.user._id.toString(),
+      )
+    ) {
       return res
         .status(400)
         .json({ message: "User already a member of the group" });
@@ -68,8 +72,32 @@ const joinGroup = async (req, res) => {
   }
 };
 
+// Leave Group
+const leaveGroup = async (req, res) => {
+  try {
+    const { groupId } = req.params;
+    const group = await groupModel.findByIdAndUpdate(
+      groupId,
+      { $pull: { members: req.user._id } },
+      { new: true },
+    );
+
+    if (!group) {
+      return res.status(404).json({ message: "Group not found" });
+    }
+
+    res.status(200).json({
+      message: "Left group successfully",
+      members: group.members,
+    });
+  } catch (e) {
+    res.status(400).json({ message: "Error leaving group", error: e.message });
+  }
+};
+
 module.exports = {
   createGroup,
   getAllGroups,
   joinGroup,
+  leaveGroup,
 };
