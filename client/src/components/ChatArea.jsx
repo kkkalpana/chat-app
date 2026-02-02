@@ -97,7 +97,7 @@ const ChatArea = ({ selectedGroup, socket }) => {
 
     try {
       const { data } = await axios.get(
-        `${import.meta.env.BACKEND_URL}/api/messages/${selectedGroup._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/messages/${selectedGroup._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -117,7 +117,7 @@ const ChatArea = ({ selectedGroup, socket }) => {
     try {
       const token = currentUser?.token;
       const data = await axios.post(
-        `${import.meta.env.BACKEND_URL}/api/messages`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/messages`,
         {
           content: newMessage,
           groupId: selectedGroup._id,

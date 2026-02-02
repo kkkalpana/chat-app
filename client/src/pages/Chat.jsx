@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import ChatArea from "../components/ChatArea";
 import io from "socket.io-client";
 import { useState, useEffect } from "react";
-const ENDPOINT = import.meta.env.BACKEND_URL;
+const ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
 const Chat = () => {
   const [selectedGroup, setSelectedGroup] = useState();
