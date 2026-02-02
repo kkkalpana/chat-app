@@ -51,11 +51,14 @@ const Sidebar = ({ setSelectedGroup }) => {
     try {
       const userInfo = JSON.parse(localStorage.getItem("userInfo") || "{}");
       const token = userInfo?.token;
-      const { data } = await axios.get("http://localhost:8000/api/groups/", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const { data } = await axios.get(
+        `${import.meta.env.BACKEND_URL}/api/groups/`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       setGroups(data);
 
@@ -79,7 +82,7 @@ const Sidebar = ({ setSelectedGroup }) => {
       const userInfo = JSON.parse(localStorage.getItem("userInfo") || "{}");
       const token = userInfo?.token;
       const { data } = await axios.post(
-        "http://localhost:8000/api/groups/",
+        `${import.meta.env.BACKEND_URL}/api/groups/`,
         {
           name: newGroupName,
           description: newGroupDescription,
@@ -125,7 +128,7 @@ const Sidebar = ({ setSelectedGroup }) => {
       const userInfo = JSON.parse(localStorage.getItem("userInfo") || "{}");
       const token = userInfo?.token;
       const { data } = await axios.post(
-        `http://localhost:8000/api/groups/${groupId}/join`,
+        `${import.meta.env.BACKEND_URL}/api/groups/${groupId}/join`,
         {},
         {
           headers: {
@@ -160,7 +163,7 @@ const Sidebar = ({ setSelectedGroup }) => {
       const userInfo = JSON.parse(localStorage.getItem("userInfo") || "{}");
       const token = userInfo?.token;
       const { data } = await axios.post(
-        `http://localhost:8000/api/groups/${groupId}/leave`,
+        `${import.meta.env.BACKEND_URL}/api/groups/${groupId}/leave`,
         {},
         {
           headers: {

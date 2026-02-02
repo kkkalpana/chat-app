@@ -5,13 +5,13 @@ const socketIo = (io) => {
   io.on("connection", (socket) => {
     const user = socket.handshake.auth.user;
     console.log(
-      `User connected: ${user.username} with socket ID: ${socket.id}`
+      `User connected: ${user.username} with socket ID: ${socket.id}`,
     );
 
     // !START: Join room handler
     socket.on("joinRoom", (groupId) => {
       socket.join(groupId);
-      console.log(`User ${user.username} joined room: ${roomId}`);
+      console.log(`User ${user.username} joined room: ${groupId}`);
       onlineUsers.set(socket.id, { user, room: groupId });
 
       const usersInRoom = Array.from(onlineUsers.values())

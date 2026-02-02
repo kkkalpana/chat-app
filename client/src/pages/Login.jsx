@@ -27,10 +27,13 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:8000/api/users/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${import.meta.env.BACKEND_URL}/api/users/login`,
+        {
+          email,
+          password,
+        },
+      );
 
       // Store the token
       localStorage.setItem("userInfo", JSON.stringify(res.data.doc));

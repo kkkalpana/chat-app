@@ -26,11 +26,14 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:8000/api/users/register", {
-        email,
-        password,
-        username,
-      });
+      const res = await axios.post(
+        `${import.meta.env.BACKEND_URL}/api/users/register`,
+        {
+          email,
+          password,
+          username,
+        },
+      );
 
       // Store the token
 
