@@ -27,9 +27,9 @@ function registerUser(req, res) {
 
 //login User
 
-function loginUser(req, res) {
+const loginUser = async (req, res) => {
   const { email, password } = req.body;
-  UserModel.findOne({ email })
+  await UserModel.findOne({ email })
     .then((doc) => {
       if (doc && doc.comparePassword(password)) {
         res.json({
@@ -48,7 +48,7 @@ function loginUser(req, res) {
     .catch((e) => {
       res.status(400).json({ message: e.message });
     });
-}
+};
 
 // generate token
 const generateToken = (id) => {
