@@ -36,7 +36,7 @@ app.use(
   cors({
     origin: ["http://localhost:5173", "https://halo-connect.netlify.app"],
     credentials: true,
-  })
+  }),
 );
 
 //connect to database
