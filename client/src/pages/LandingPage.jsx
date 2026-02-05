@@ -135,7 +135,7 @@ export default function LandingPage() {
                   zIndex: -1,
                 }}
               >
-                ChitChat
+                Halo-connect
               </Text>
               <br />
               <Text as="span" color="blue.400">
@@ -216,7 +216,7 @@ export default function LandingPage() {
                 <HStack justify="space-between">
                   <HStack>
                     <Icon as={FiUsers} />
-                    <Text fontWeight="bold">Team ChitChat</Text>
+                    <Text fontWeight="bold">Team Halo-connect</Text>
                   </HStack>
                   <HStack spacing={4}>
                     <Badge colorScheme="green" variant="solid">
