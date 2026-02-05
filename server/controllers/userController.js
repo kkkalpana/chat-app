@@ -30,8 +30,8 @@ function registerUser(req, res) {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   await UserModel.findOne({ email })
-    .then((doc) => {
-      if (doc && doc.comparePassword(password)) {
+    .then(async (doc) => {
+      if (doc && (await doc.comparePassword(password))) {
         res.json({
           doc: {
             _id: doc._id,
