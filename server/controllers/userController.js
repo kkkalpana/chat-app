@@ -46,6 +46,7 @@ const loginUser = async (req, res) => {
       }
     })
     .catch((e) => {
+      console.error("Login error:", e);
       res.status(400).json({ message: e.message });
     });
 };

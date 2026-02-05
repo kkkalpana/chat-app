@@ -24,7 +24,7 @@ const server = http.createServer(app);
 // configure cors for socket.io
 const io = socket(server, {
   cors: {
-    origin: ["http://localhost:5173"], // frontend url
+    origin: ["http://localhost:5173", "https://halo-connect.netlify.app"], // frontend urls
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -32,7 +32,12 @@ const io = socket(server, {
 
 //middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://halo-connect.netlify.app"],
+    credentials: true,
+  })
+);
 
 //connect to database
 mongoose
