@@ -12,19 +12,19 @@ A full-stack real-time chat application with user authentication, group messagin
 
 ### Landing Page
 
-![Landing Page](screenshots/home.png)
+![Landing Page](client/public/images/Home_Page.png)
 
 ### Login
 
-![Login Page](screenshots/login.png)
+![Login Page](client/public/images/Login_Page.png)
 
 ### Register
 
-![Register Page](screenshots/register.png)
+![Register Page](client/public/images/Register_Page.png)
 
 ### Chat Interface
 
-![Chat Interface](screenshots/chat.png)
+![Chat Interface](client/public/images/Group_Chat.png)
 
 ---
 
@@ -207,6 +207,6 @@ chat-app/
 
 ## Author
 
-Made with **Kalpana**
+Made by **Kalpana**
 
 ---
