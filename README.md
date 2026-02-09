@@ -10,21 +10,15 @@ A full-stack real-time chat application with user authentication, group messagin
 
 ## Screenshots
 
-### Landing Page
+<div align="center">
+  <img src="client/public/images/Home_Page.png" alt="Landing Page" width="49%" />
+  <img src="client/public/images/Login_Page.png" alt="Login Page" width="49%" />
+</div>
 
-![Landing Page](client/public/images/Home_Page.png)
-
-### Login
-
-![Login Page](client/public/images/Login_Page.png)
-
-### Register
-
-![Register Page](client/public/images/Register_Page.png)
-
-### Chat Interface
-
-![Chat Interface](client/public/images/Group_Chat.png)
+<div align="center">
+  <img src="client/public/images/Register_Page.png" alt="Register Page" width="49%" />
+  <img src="client/public/images/Group_Chat.png" alt="Chat Interface" width="49%" />
+</div>
 
 ---
 
